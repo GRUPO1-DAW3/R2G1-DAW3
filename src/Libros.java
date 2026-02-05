@@ -58,4 +58,17 @@ public class Libros {
         Libros libro = (Libros) obj;
         return cod_libro == libro.cod_libro;
     }
+/* Otros metodos de la clase libros */
+    @Override
+    public String toString() {
+        return "Libros{" +
+                "titulo='" + titulo + '\'' +
+                ", Autores=" + Autores +
+                ", anioPublic=" + anioPublic +
+                ", genero='" + genero + '\'' +
+                ", precio=" + precio +
+                ", paginas=" + paginas +
+                ", cod_libro=" + cod_libro +
+                '}';
+    }
 }

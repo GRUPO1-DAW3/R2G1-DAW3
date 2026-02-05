@@ -48,8 +48,19 @@ public class Autores {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        Autores autor = (Autores) obj;
-        return cod_autor == autor.cod_autor;
+        Autores autores = (Autores) obj;
+        return cod_autor == autores.cod_autor;
+    }
+//Otros metodos de la clase autores
+    @Override
+    public String toString() {
+        return "Autores{" +
+                "nombre='" + nombre + '\'' +
+                ", nacionalidad='" + nacionalidad + '\'' +
+                ", edad=" + edad +
+                ", numLibros=" + numLibros +
+                ", cod_autor=" + cod_autor +
+                '}';
     }
 
 }
