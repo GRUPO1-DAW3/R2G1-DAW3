@@ -1,0 +1,31 @@
+### Java ###
+# Clases compiladas
+*.class
+
+# Clases de Test
+*Test.java
+
+# Carpeta con binarios
+bin/
+
+# Carpeta con documentación
+doc/
+
+# Archivos de log
+*.log
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Paquetes
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Ejemplo "tonto"
+NoSubirGit.docx
+
