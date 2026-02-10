@@ -4,10 +4,45 @@ public class Colaboraciones {
     private Libros libro;
     private Autores autor;
 
-//Metodo constructor
+//Metodo constructor de la clase Colaboraciones
     public Colaboraciones(int pID_colaboraciones, Libros pLibro, Autores pAutor){
         this.ID_colaboraciones=pID_colaboraciones;
         this.libro=pLibro;
         this.autor=pAutor;
     }
+
+//Getters de la clase Colaboraciones
+    public int getID_colaboracione(){
+        return ID_colaboraciones;
+    }
+    public Libros getlibro(){
+        return libro;
+    }
+    public Autores getAutor(){
+        return autor;
+    }
+
+//Setters de la clase Colaboraciones
+    public void setID_colaboraciones(int pID_colaboraciones){
+        this.ID_colaboraciones=pID_colaboraciones;
+    }
+    public void setLibro(Libros pLibro){
+        this.libro=pLibro;
+    }
+    public void setAutor(Autores pAutor){
+        this.autor=pAutor;
+    }
+//Otros Equals y toString de la clase Colaboraciones
+    @Override
+    public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
+        return super.equals(obj);
+    }
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return super.toString();
+    }
+//Otros metodos de la clase Colaboraciones
+    
 }
