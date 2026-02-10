@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class App {
 
     // Lista de autores
@@ -81,8 +83,15 @@ public class App {
     }
 
     public static void main(String[] args) {
-        App app = new App();
-        System.out.println("La media de paginas de Brandon Sanderson es: " +
-            app.mediaPaginasAutor(app.Brandon_Sanderson));
+        Scanner sc = new Scanner(System.in);
+        Autores autorBuscado;
+        System.out.println("Ingrese el nombre del autor para calcular la media de páginas:");
+        autorBuscado = sc.nextLine();
+        if (Libros.getAutores1(autorBuscado) == null) {
+            System.out.println("El autor no se encuentra en la lista.");
+            return;
+        }
+        System.out.println("La media de paginas del autor " + autorBuscado + " es: " +
+            app.mediaPaginasAutor(Libros.getAutores1(autorBuscado)));
     }
 }

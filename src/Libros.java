@@ -24,6 +24,12 @@ public class Libros {
     public Autores getAutores() {
         return Autores;
     }
+    public Autores getAutores1(String nombreAutor) {
+        if (this.Autores.getNombre().equalsIgnoreCase(nombreAutor)) {
+            return this.Autores;
+        }
+        return null; // Retorna null si no se encuentra el autor
+    }
     public int getAnioPublic() {
         return anioPublic;
     }
@@ -38,6 +44,12 @@ public class Libros {
     }
     public int getCod_libro() {
         return cod_libro;
+    }
+    public Autores getAutores(Autores nombreAutor) {
+        if (this.Autores.getNombre().equalsIgnoreCase(nombreAutor.getNombre())) {
+            return this.Autores;
+        }
+        return null; // Retorna null si no se encuentra el autor
     }
 
 /* Metodo setters de la clase libros */
