@@ -33,15 +33,22 @@ public class Colaboraciones {
         this.autor=pAutor;
     }
 //Otros Equals y toString de la clase Colaboraciones
+    
     @Override
     public boolean equals(Object obj) {
-        // TODO Auto-generated method stub
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Colaboraciones colaboraciones = (Colaboraciones) obj;
+        return ID_colaboraciones == colaboraciones.ID_colaboraciones;
     }
+
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        return "Colaboraciones{" +
+                "ID_colaboraciones=" + ID_colaboraciones +
+                ", libro=" + libro +
+                ", autor=" + autor +
+                '}';
     }
 //Otros metodos de la clase Colaboraciones
     

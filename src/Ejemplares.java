@@ -1,0 +1,64 @@
+public class Ejemplares {
+//Atributos de la clase Ejemplares
+    private int ID_ejemplares;
+    private Libros libro;
+    private String estado;
+
+
+//Metodo constructor de la clase Ejemplares
+    public Ejemplares(int pID_ejemplares, Libros pLibro, String pEstado) {
+        this.ID_ejemplares = pID_ejemplares;
+        this.libro = pLibro;
+        this.estado = pEstado;
+    }
+
+// Constructor vacío
+    public Ejemplares() {
+        this.ID_ejemplares = 0;
+        this.libro = null;
+        this.estado = "";
+    }
+
+//Getters de la clase Ejemplares
+    public int getID_ejemplares(){
+        return ID_ejemplares;
+    }
+    public Libros getLibro(){
+        return libro;
+    }
+    public String getEstado(){
+        return estado;
+    }
+
+//Setters de la clase Ejemplares
+    public void setID_ejemplares(int pID_ejemplares){
+        this.ID_ejemplares=pID_ejemplares;
+    }
+    public void setLibro(Libros pLibro){
+        this.libro=pLibro;
+    }
+    public void setEstado(String pEstado){
+        this.estado=pEstado;
+    }
+
+//Equal y toString de la clase Ejemplares
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Ejemplares ejemplares = (Ejemplares) obj;
+        return ID_ejemplares == ejemplares.ID_ejemplares;
+    }
+
+    @Override
+    public String toString() {
+        return "Ejemplares{" +
+                "ID_ejemplares=" + ID_ejemplares +
+                ", libro=" + libro +
+                ", estado='" + estado + '\'' +
+                '}';
+    }
+
+//Otros metodos de la clase Ejemplares
+
+}

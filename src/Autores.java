@@ -54,13 +54,7 @@ public class Autores {
 //Otros metodos de la clase autores
     @Override
     public String toString() {
-        return "Autores{" +
-                "nombre='" + nombre + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", edad=" + edad +
-                ", numLibros=" + numLibros +
-                ", cod_autor=" + cod_autor +
-                '}';
+        return ""+ nombre + ", " + nacionalidad + ", " + edad + " años, " + numLibros + " libros disponibles.";
     }
 
 }

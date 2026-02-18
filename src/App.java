@@ -113,6 +113,8 @@ public class App {
 
         int media = app.mediaPaginasAutor(autorBuscado);
 
+        System.out.println(autorBuscado);
         System.out.println("La media de páginas del autor " + autorBuscado.getNombre() + " es: " + media);
+        
     }
 }
