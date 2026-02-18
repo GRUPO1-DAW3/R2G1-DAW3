@@ -62,7 +62,7 @@ public class App {
             new Libros("El ritmo de la guerra", Brandon_Sanderson, 2020, "Fantasía", 32.0, 1232)
         };
     }
-
+    //Metodo para calcular la media de paginas de un autor
     public int mediaPaginasAutor(Autores autor) {
         int media = 0;
         int suma = 0;
@@ -81,17 +81,38 @@ public class App {
         }
         return media;
     }
+    //Metodo para buscar un autor por su nombre
+    public Autores buscarAutorPorNombre(String nombre) {
+        Autores[] autores = {
+            Gabriel_Garcia, George_Orwell, Patrick_Rothfuss,
+            Carlos_Ruiz_Zafon, Miguel_de_Cervantes, J_K_Rowling,
+            Jorge_R_R_Martin, Brandon_Sanderson
+        };
 
+        for (int i = 0; i < autores.length; i++) {
+            if (autores[i].getNombre().equalsIgnoreCase(nombre)) {
+                return autores[i];
+            }
+        }
+        return null;
+    }
+    //Metodo main
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Autores autorBuscado;
+        App app = new App();
+
         System.out.println("Ingrese el nombre del autor para calcular la media de páginas:");
-        autorBuscado = sc.nextLine();
-        if (Libros.getAutores1(autorBuscado) == null) {
+        String nombreAutor = sc.nextLine();
+
+        Autores autorBuscado = app.buscarAutorPorNombre(nombreAutor);
+
+        if (autorBuscado == null) {
             System.out.println("El autor no se encuentra en la lista.");
             return;
         }
-        System.out.println("La media de paginas del autor " + autorBuscado + " es: " +
-            app.mediaPaginasAutor(Libros.getAutores1(autorBuscado)));
+
+        int media = app.mediaPaginasAutor(autorBuscado);
+
+        System.out.println("La media de páginas del autor " + autorBuscado.getNombre() + " es: " + media);
     }
 }
