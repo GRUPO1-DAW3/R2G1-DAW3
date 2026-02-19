@@ -52,13 +52,16 @@ public class Ejemplares {
 
     @Override
     public String toString() {
-        return "Ejemplares{" +
-                "ID_ejemplares=" + ID_ejemplares +
-                ", libro=" + libro +
-                ", estado='" + estado + '\'' +
-                '}';
+        return ""+ ID_ejemplares+", "+libro+", "+estado;
     }
 
 //Otros metodos de la clase Ejemplares
 
+    public String comprobarAutor(){
+        if (libro == null) {
+            return "No hay libro asociado a este ejemplar.";
+        }else{
+            return libro.getAutores().toString();
+        }
+    }
 }

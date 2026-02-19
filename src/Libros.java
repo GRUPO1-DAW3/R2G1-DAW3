@@ -24,12 +24,12 @@ public class Libros {
     public Autores getAutores() {
         return Autores;
     }
-    public Autores getAutores1(String nombreAutor) {
+    /*public Autores getAutores1(String nombreAutor) {
         if (this.Autores.getNombre().equalsIgnoreCase(nombreAutor)) {
             return this.Autores;
         }
-        return null; // Retorna null si no se encuentra el autor
-    }
+        return null; // Retorna null si no se encuentra el autor 
+    }*/
     public int getAnioPublic() {
         return anioPublic;
     }
@@ -91,14 +91,6 @@ public class Libros {
     }
     @Override
     public String toString() {
-        return "Libros{" +
-                "titulo='" + titulo + '\'' +
-                ", Autores=" + Autores +
-                ", anioPublic=" + anioPublic +
-                ", genero='" + genero + '\'' +
-                ", precio=" + precio +
-                ", paginas=" + paginas +
-                ", cod_libro=" + cod_libro +
-                '}';
+        return ""+ titulo + ", " + Autores + ", " + anioPublic + ", " + genero + ", " + precio + "euros, " + paginas + " páginas, código: " + cod_libro;
     }
 }

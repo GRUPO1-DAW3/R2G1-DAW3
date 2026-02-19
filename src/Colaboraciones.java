@@ -44,12 +44,7 @@ public class Colaboraciones {
 
     @Override
     public String toString() {
-        return "Colaboraciones{" +
-                "ID_colaboraciones=" + ID_colaboraciones +
-                ", libro=" + libro +
-                ", autor=" + autor +
-                '}';
+        return ""+ID_colaboraciones+", "+libro+", "+autor;
     }
-//Otros metodos de la clase Colaboraciones
     
 }

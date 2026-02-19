@@ -2,15 +2,8 @@ import java.util.Scanner;
 
 public class App {
 
-    // Lista de autores
-    Autores Gabriel_Garcia;
-    Autores George_Orwell;
-    Autores Patrick_Rothfuss;
-    Autores Carlos_Ruiz_Zafon;
-    Autores Miguel_de_Cervantes;
-    Autores J_K_Rowling;
-    Autores Jorge_R_R_Martin;
-    Autores Brandon_Sanderson;
+    // Lista de autores accesible desde toda la clase
+    Autores[] listaAutores;
 
     // Lista de libros
     Libros[] listaLibros;
@@ -18,17 +11,24 @@ public class App {
     public App() {
 
         // Crear autores
-        Gabriel_Garcia = new Autores("Gabriel García Márquez", "Colombiana", 87, 5, 1001);
-        George_Orwell = new Autores("George Orwell", "Británica", 46, 6, 1002);
-        Patrick_Rothfuss = new Autores("Patrick Rothfuss", "Estadounidense", 47, 3, 1003);
-        Carlos_Ruiz_Zafon = new Autores("Carlos Ruiz Zafón", "Española", 55, 7, 1004);
-        Miguel_de_Cervantes = new Autores("Miguel de Cervantes", "Española", 68, 10, 1005);
-        J_K_Rowling = new Autores("J.K. Rowling", "Británica", 58, 15, 1006);
-        Jorge_R_R_Martin = new Autores("Jorge R.R. Martin", "Estadounidense", 76, 20, 1007);
-        Brandon_Sanderson = new Autores("Brandon Sanderson", "Estadounidense", 47, 25, 1008);
+        Autores Gabriel_Garcia = new Autores("Gabriel García Márquez", "Colombiana", 87, 5, 1001);
+        Autores George_Orwell = new Autores("George Orwell", "Británica", 46, 6, 1002);
+        Autores Patrick_Rothfuss = new Autores("Patrick Rothfuss", "Estadounidense", 47, 3, 1003);
+        Autores Carlos_Ruiz_Zafon = new Autores("Carlos Ruiz Zafón", "Española", 55, 7, 1004);
+        Autores Miguel_de_Cervantes = new Autores("Miguel de Cervantes", "Española", 68, 10, 1005);
+        Autores J_K_Rowling = new Autores("J.K. Rowling", "Británica", 58, 15, 1006);
+        Autores Jorge_R_R_Martin = new Autores("Jorge R.R. Martin", "Estadounidense", 76, 20, 1007);
+        Autores Brandon_Sanderson = new Autores("Brandon Sanderson", "Estadounidense", 47, 25, 1008);
+
+        // Guardar autores en la lista
+        listaAutores = new Autores[]{
+            Gabriel_Garcia, George_Orwell, Patrick_Rothfuss,
+            Carlos_Ruiz_Zafon, Miguel_de_Cervantes, J_K_Rowling,
+            Jorge_R_R_Martin, Brandon_Sanderson
+        };
 
         // Crear libros
-        listaLibros = new Libros[] {
+        listaLibros = new Libros[]{
             new Libros("Cien Años de Soledad", Gabriel_Garcia, 1967, "Realismo Mágico", 20.5, 417),
             new Libros("El amor en tiempos del cólera", Gabriel_Garcia, 1985, "Novela", 18.0, 348),
             new Libros("Crónica de una muerte anunciada", Gabriel_Garcia, 1981, "Novela", 15.0, 128),
@@ -62,9 +62,9 @@ public class App {
             new Libros("El ritmo de la guerra", Brandon_Sanderson, 2020, "Fantasía", 32.0, 1232)
         };
     }
-    //Metodo para calcular la media de paginas de un autor
+
+    // Método para calcular la media de páginas de un autor
     public int mediaPaginasAutor(Autores autor) {
-        int media = 0;
         int suma = 0;
         int contador = 0;
 
@@ -77,26 +77,23 @@ public class App {
         }
 
         if (contador > 0) {
-            media = suma / contador;
+            return suma / contador;
         }
-        return media;
+        return 0;
     }
-    //Metodo para buscar un autor por su nombre
-    public Autores buscarAutorPorNombre(String nombre) {
-        Autores[] autores = {
-            Gabriel_Garcia, George_Orwell, Patrick_Rothfuss,
-            Carlos_Ruiz_Zafon, Miguel_de_Cervantes, J_K_Rowling,
-            Jorge_R_R_Martin, Brandon_Sanderson
-        };
 
-        for (int i = 0; i < autores.length; i++) {
-            if (autores[i].getNombre().equalsIgnoreCase(nombre)) {
-                return autores[i];
+    // Método para buscar un autor por su nombre
+    public Autores buscarAutorPorNombre(String nombre) {
+
+        for (int i = 0; i < listaAutores.length; i++) {
+            if (listaAutores[i].getNombre().equalsIgnoreCase(nombre)) {
+                return listaAutores[i];
             }
         }
         return null;
     }
-    //Metodo main
+
+    // Método main
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         App app = new App();
@@ -115,6 +112,23 @@ public class App {
 
         System.out.println(autorBuscado);
         System.out.println("La media de páginas del autor " + autorBuscado.getNombre() + " es: " + media);
-        
+
+        // Buscar un libro por su título
+        System.out.println("Introduce un libro del que quieras saber sus datos:");
+        String nombreLibro = sc.nextLine();
+
+        boolean chivato = false;
+        for (int i = 0; i < app.listaLibros.length; i++) {
+            if (app.listaLibros[i].getTitulo().equalsIgnoreCase(nombreLibro)) {
+                System.out.println(app.listaLibros[i]);
+                chivato = true;
+            }
+        }
+
+        if (!chivato) {
+            System.out.println("No se encontró el libro.");
+        }
+
+        sc.close();
     }
 }

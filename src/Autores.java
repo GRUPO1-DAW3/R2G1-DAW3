@@ -1,11 +1,11 @@
 public class Autores {
-/* Atributos de la clase autores */
+//Atributos de la clase autores
     private String nombre;
     private String nacionalidad;
     private int edad;
     private int numLibros;
     private int cod_autor;
-/* Metodo constructor de la clase autores */
+//Metodo constructor de la clase autores
     public Autores(String nombre, String nacionalidad, int edad, int numLibros, int cod_autor){
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
@@ -13,7 +13,7 @@ public class Autores {
         this.numLibros = numLibros;
         this.cod_autor = cod_autor;
     }
-/* Metodos getters de la clase autores */
+//Getters de la clase autores
     public String getNombre() {
         return nombre;
     }
@@ -29,7 +29,7 @@ public class Autores {
     public int getCod_autor() {
         return cod_autor;
     }
-/* Metodos setters de la clase autores */
+//Setters de la clase autores
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -69,4 +69,5 @@ public class Autores {
     }
 
 }
+
 
