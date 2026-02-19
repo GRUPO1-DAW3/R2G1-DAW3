@@ -30,20 +30,31 @@ public class Autores {
         return cod_autor;
     }
 /* Metodos setters de la clase autores */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
     public void setNumLibros(int numLibros) {
-        if (numLibros >= 0)
+        if (numLibros >= 0){
             this.numLibros = numLibros;
+        }else{
+            System.out.println("El autor debe tener al menos un libro.");
+        }
     }
     public void setEdad(int edad) {
-        if (edad > 0)
+        if (edad > 0){
             this.edad = edad;
+        }else{
+            System.out.println("La edad debe ser mayor a 0");
+        }
     }
-/*hash y equals */
-    @Override
-    public int hashCode() {
-        return Integer.hashCode(cod_autor);
+    public void setCod_autor(int cod_autor) {
+        this.cod_autor = cod_autor;
     }
 
+//Equals y toString de la clase autores
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -51,7 +62,7 @@ public class Autores {
         Autores autores = (Autores) obj;
         return cod_autor == autores.cod_autor;
     }
-//Otros metodos de la clase autores
+
     @Override
     public String toString() {
         return ""+ nombre + ", " + nacionalidad + ", " + edad + " años, " + numLibros + " libros disponibles.";

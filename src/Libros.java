@@ -49,20 +49,39 @@ public class Libros {
         if (this.Autores.getNombre().equalsIgnoreCase(nombreAutor.getNombre())) {
             return this.Autores;
         }
-        return null; // Retorna null si no se encuentra el autor
+        return null; // Devuelve null si no se encuentra el autor
     }
 
-/* Metodo setters de la clase libros */
+/* Metodos setters de la clase libros */
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public void setAutores(Autores Autores) {
+        this.Autores = Autores;
+    }
+    public void setAnioPublic(int anioPublic) {
+        this.anioPublic = anioPublic;
+    }
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
     public void setPrecio(double precio) {
         if (precio >= 0)
             this.precio = precio;
     }
-/*Equals y hash*/
-    @Override
-    public int hashCode() {
-        return Integer.hashCode(cod_libro);
+
+    public void setPaginas(int paginas) {
+        if (paginas > 0)
+            this.paginas = paginas;
+    }
+    public void setCod_libro(int cod_libro) {
+        this.cod_libro = cod_libro;
     }
 
+
+
+//Equals y toString de la clase libros
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -70,7 +89,6 @@ public class Libros {
         Libros libro = (Libros) obj;
         return cod_libro == libro.cod_libro;
     }
-/* Otros metodos de la clase libros */
     @Override
     public String toString() {
         return "Libros{" +
