@@ -4,12 +4,12 @@ public class Prestamos{
 //Atributos de la clase Prestamos
     private int ID_prestamo;
     private Usuarios usuario;
-    private Ejemplares ejemplar;
+    private Ejemplar ejemplar;
     private Date fecha_inicio;
     private Date fecha_devolucion;
 
 //Metodo constructor de la clase Prestamos
-    public Prestamos(int pID_prestamo, Usuarios pUsuario, Ejemplares pEjemplar, Date pFecha_inicio, Date pFecha_devolucion){
+    public Prestamos(int pID_prestamo, Usuarios pUsuario, Ejemplar pEjemplar, Date pFecha_inicio, Date pFecha_devolucion){
         this.ID_prestamo=pID_prestamo;
         this.usuario=pUsuario;
         this.ejemplar=pEjemplar;
@@ -24,7 +24,7 @@ public class Prestamos{
     public Usuarios getUsuario(){
         return usuario;
     }
-    public Ejemplares getEjemplar(){
+    public Ejemplar getEjemplar(){
         return ejemplar;
     }
     //Comprobamos si la fecha de inicio y la fechad de devolucion son nulas o no
@@ -51,7 +51,7 @@ public class Prestamos{
     public void setUsuario(Usuarios pUsuario){
         this.usuario=pUsuario;
     }
-    public void setEjemplar(Ejemplares pEjemplar){
+    public void setEjemplar(Ejemplar pEjemplar){
         this.ejemplar=pEjemplar;
     }
     //Comprobamos que la fecha de inicio y la fecha de devolucion no sean nulas.
