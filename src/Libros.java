@@ -95,7 +95,7 @@ public class Libros {
         int suma = 0;
         int contador = 0;
 
-        if (this.Autores.equals(autor)) {
+        if (this.Autores.equals(autor)) {//Comparamos el autor del libro con el autor del parametro
             suma += this.paginas;
             contador++;
         }
@@ -106,9 +106,10 @@ public class Libros {
         return 0;
     }
 
-    public void buscarLibroPorGenero(Libros[] libros, String genero) {
+    //Este metodo lo usaremos para buscar libros por su genero
+    public void buscarLibroPorGenero(Libros[] libros, String genero) { //En los parametros pedimos el array de libros en el que queremos buscar y el genero que queremos buscar
         for (int i = 0; i < libros.length; i++) {
-            if (libros[i].getGenero().equalsIgnoreCase(genero)) {
+            if (libros[i].getGenero().equalsIgnoreCase(genero)) { //Comparamos el genero del libro que se encuentra en esa posicion del array con el genero del parametro ignorando mayusculas y minusculas
                 System.out.println(libros[i]);
             }
         }
