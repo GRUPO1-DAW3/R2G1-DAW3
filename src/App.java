@@ -1,14 +1,14 @@
 public class App {
 
     // Autores
-    Autores Gabriel_Garcia = new Autores("Gabriel García Márquez", "Colombiana", 87, 5, 1001);
-    Autores George_Orwell = new Autores("George Orwell", "Británica", 46, 6, 1002);
-    Autores Patrick_Rothfuss = new Autores("Patrick Rothfuss", "Estadounidense", 47, 3, 1003);
-    Autores Carlos_Ruiz_Zafon = new Autores("Carlos Ruiz Zafón", "Española", 55, 7, 1004);
-    Autores Miguel_de_Cervantes = new Autores("Miguel de Cervantes", "Española", 68, 10, 1005);
-    Autores J_K_Rowling = new Autores("J.K. Rowling", "Británica", 58, 15, 1006);
-    Autores Jorge_R_R_Martin = new Autores("Jorge R.R. Martin", "Estadounidense", 76, 20, 1007);
-    Autores Brandon_Sanderson = new Autores("Brandon Sanderson", "Estadounidense", 47, 25, 1008);
+    Autor Gabriel_Garcia = new Autor("Gabriel García Márquez", "Colombiana", 87, 5, 1001);
+    Autor George_Orwell = new Autor("George Orwell", "Británica", 46, 6, 1002);
+    Autor Patrick_Rothfuss = new Autor("Patrick Rothfuss", "Estadounidense", 47, 3, 1003);
+    Autor Carlos_Ruiz_Zafon = new Autor("Carlos Ruiz Zafón", "Española", 55, 7, 1004);
+    Autor Miguel_de_Cervantes = new Autor("Miguel de Cervantes", "Española", 68, 10, 1005);
+    Autor J_K_Rowling = new Autor("J.K. Rowling", "Británica", 58, 15, 1006);
+    Autor Jorge_R_R_Martin = new Autor("Jorge R.R. Martin", "Estadounidense", 76, 20, 1007);
+    Autor Brandon_Sanderson = new Autor("Brandon Sanderson", "Estadounidense", 47, 25, 1008);
 
     // Libros
     Libros Cien_Anios = new Libros("Cien Años de Soledad", Gabriel_Garcia, 1967, "Realismo Mágico", 20.5, 417);

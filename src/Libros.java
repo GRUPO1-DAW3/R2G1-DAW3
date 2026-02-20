@@ -1,16 +1,16 @@
 public class Libros {
 //Atributos de la clase Libros; Aqui metemos todos los atributos que tendra nuestra clase
     private String titulo;
-    private Autores Autores;
+    private Autor autor;
     private int anioPublic;
     private String genero;
     private double precio;
     private int paginas;
     private int cod_libro;
 //Constructor de la clase libros; En este constructor haremos que el codigo del libro sea aleatorio
-    public Libros(String titulo, Autores Autores, int anioPublic, String genero, double precio, int paginas) {
+    public Libros(String titulo, Autor autor, int anioPublic, String genero, double precio, int paginas) {
         this.titulo = titulo;
-        this.Autores = Autores;
+        this.autor = autor;
         this.anioPublic = anioPublic;
         this.genero = genero;
         this.precio = precio;
@@ -21,8 +21,8 @@ public class Libros {
     public String getTitulo() {
         return titulo;
     }
-    public Autores getAutores() {
-        return Autores;
+    public Autor getAutor() {
+        return autor;
     }
     public int getAnioPublic() {
         return anioPublic;
@@ -44,8 +44,8 @@ public class Libros {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    public void setAutores(Autores Autores) {
-        this.Autores = Autores;
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 //En este caso, hemos decidido que si el año de publicacion es menor a 1000 o mayor a 2026 de un error
     public void setAnioPublic(int anioPublic) {
@@ -87,15 +87,15 @@ public class Libros {
     }
     @Override
     public String toString() {
-        return ""+ titulo + ", " + Autores + ", " + anioPublic + ", " + genero + ", " + precio + "euros, " + paginas + " páginas, código: " + cod_libro;
+        return ""+ titulo + ", " + autor + ", " + anioPublic + ", " + genero + ", " + precio + "euros, " + paginas + " páginas, código: " + cod_libro;
     }
 
     //Este metodo se encargara de calcular laa media de paginas de un autor
-    public int mediaPaginasAutor(Autores autor) {
+    public int mediaPaginasAutor(Autor autor) {
         int suma = 0;
         int contador = 0;
 
-        if (this.Autores.equals(autor)) {//Comparamos el autor del libro con el autor del parametro
+        if (this.autor.equals(autor)) {//Comparamos el autor del libro con el autor del parametro
             suma += this.paginas;
             contador++;
         }

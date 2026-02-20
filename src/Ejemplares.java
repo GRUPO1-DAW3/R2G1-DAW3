@@ -62,7 +62,7 @@ public class Ejemplares {
         if (libro == null) {
             return "No hay libro asociado a este ejemplar.";
         }else{
-            return libro.getAutores().toString(); //Llamamos al getAutores de la clase libro para obtener el autor del libro asociado a este ejemplar
+            return libro.getAutor().toString(); //Llamamos al getAutor de la clase libro para obtener el autor del libro asociado a este ejemplar
         }
     }
 
