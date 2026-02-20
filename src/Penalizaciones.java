@@ -38,4 +38,16 @@ public class Penalizaciones {
     public String toString() {
         return ""+ID_penalizacion+", "+usuario;
     }
+
+//Otros metodos de la clase Penalizaciones
+
+    //Metodo para comprobar el usuario asociado a esta penalizacion
+    public String comprobarUsuario(){
+        if (usuario == null) {
+            return "No hay usuario asociado a esta penalización.";
+        }else{
+            return usuario.getNombre(); //Llamamos al getNombre de la clase usuario para obtener el nombre del usuario asociado a esta penalización
+        }
+    }
+    
 }
