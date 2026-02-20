@@ -36,6 +36,7 @@ public class Autores {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
+    //En este caso, hemos decidido que el numero de libros y la edad deben ser mayor o igual a 0
     public void setNumLibros(int numLibros) {
         if (numLibros >= 0){
             this.numLibros = numLibros;
@@ -66,6 +67,32 @@ public class Autores {
     @Override
     public String toString() {
         return ""+ nombre + ", " + nacionalidad + ", " + edad + " años, " + numLibros + " libros disponibles.";
+    }
+
+    
+    //Otros metodos de la clase autores
+
+    //Metodo con el que haremos la cuenta de los libors que escribe un autor por año
+    public void calcularLibrosPorAnio() {
+        if (edad > 0) {
+            int aniosEscritos = edad - 20; // Suponemos que el autor comenzó a escribir a los 20 años
+            if (aniosEscritos > 0) {
+                double librosPorAnio = (double) numLibros / aniosEscritos;
+                System.out.println(nombre + " ha escrito un promedio de " + librosPorAnio + " libros por año.");
+            } else {
+                System.out.println(nombre + " es muy joven para haber escrito libros.");
+            }
+        } else {
+            System.out.println("Edad no válida para calcular libros por año.");
+        }
+    }
+    //Metodo con el que determinaremos si un autor es famoso o no
+    public boolean esAutorFamoso() {
+        return numLibros >= 5; // Consideramos un autor famoso si tiene 5 o más libros disponibles
+    }
+    //Metodo con el que diremos si un autro es mayor o no
+    public boolean esAutorMayor() {
+        return edad >= 60; // Consideramos un autor mayor si tiene 60 años o más
     }
 
 }

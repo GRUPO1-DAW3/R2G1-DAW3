@@ -1,5 +1,5 @@
 public class Libros {
-    /* Atributos de la clase libros */
+//Atributos de la clase Libros; Aqui metemos todos los atributos que tendra nuestra clase
     private String titulo;
     private Autores Autores;
     private int anioPublic;
@@ -7,7 +7,7 @@ public class Libros {
     private double precio;
     private int paginas;
     private int cod_libro;
-/* Metodo constructor de la clase libros */
+//Constructor de la clase libros; En este constructor haremos que el codigo del libro sea aleatorio
     public Libros(String titulo, Autores Autores, int anioPublic, String genero, double precio, int paginas) {
         this.titulo = titulo;
         this.Autores = Autores;
@@ -17,19 +17,13 @@ public class Libros {
         this.paginas = paginas;
         this.cod_libro = (int) (Math.random() * 100000);
     }
-/* Metodos getters de la clase libros */
+//Getters de la clase libros; En este caso haremos un getter a todods los atributos de la clase
     public String getTitulo() {
         return titulo;
     }
     public Autores getAutores() {
         return Autores;
     }
-    /*public Autores getAutores1(String nombreAutor) {
-        if (this.Autores.getNombre().equalsIgnoreCase(nombreAutor)) {
-            return this.Autores;
-        }
-        return null; // Retorna null si no se encuentra el autor 
-    }*/
     public int getAnioPublic() {
         return anioPublic;
     }
@@ -45,43 +39,45 @@ public class Libros {
     public int getCod_libro() {
         return cod_libro;
     }
-    public Autores getAutores(Autores nombreAutor) {
-        if (this.Autores.getNombre().equalsIgnoreCase(nombreAutor.getNombre())) {
-            return this.Autores;
-        }
-        return null; // Devuelve null si no se encuentra el autor
-    }
 
-/* Metodos setters de la clase libros */
+//Setter de la clase libros; Aqui explicaremos los setters que hemos decidio alterar
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
     public void setAutores(Autores Autores) {
         this.Autores = Autores;
     }
+//En este caso, hemos decidido que si el año de publicacion es menor a 1000 o mayor a 2026 de un error
     public void setAnioPublic(int anioPublic) {
-        this.anioPublic = anioPublic;
+        if (anioPublic < 1000 || anioPublic > 2026) {
+            System.out.println("Error: Año de publicación no válido.");
+        } else {
+            this.anioPublic = anioPublic;
+        }
     }
     public void setGenero(String genero) {
         this.genero = genero;
     }
-
+//En este caso, hemos decidido que el precio y las paginas deben ser mayores a 0
     public void setPrecio(double precio) {
-        if (precio >= 0)
+        if (precio >= 0){
             this.precio = precio;
+        }else{
+            System.out.println("El precio no puede ser negativo.");
+        }
     }
 
     public void setPaginas(int paginas) {
-        if (paginas > 0)
+        if (paginas > 0){
             this.paginas = paginas;
+        }else{
+            System.out.println("El número de páginas debe ser mayor que 0.");
+        }
     }
-    public void setCod_libro(int cod_libro) {
-        this.cod_libro = cod_libro;
-    }
 
 
 
-//Equals y toString de la clase libros
+//Otros metodos de la clase libros.
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -93,4 +89,29 @@ public class Libros {
     public String toString() {
         return ""+ titulo + ", " + Autores + ", " + anioPublic + ", " + genero + ", " + precio + "euros, " + paginas + " páginas, código: " + cod_libro;
     }
+
+    //Este metodo se encargara de calcular laa media de paginas de un autor
+    public int mediaPaginasAutor(Autores autor) {
+        int suma = 0;
+        int contador = 0;
+
+        if (this.Autores.equals(autor)) {
+            suma += this.paginas;
+            contador++;
+        }
+
+        if (contador > 0) {
+            return suma / contador;
+        }
+        return 0;
+    }
+
+    public void buscarLibroPorGenero(Libros[] libros, String genero) {
+        for (int i = 0; i < libros.length; i++) {
+            if (libros[i].getGenero().equalsIgnoreCase(genero)) {
+                System.out.println(libros[i]);
+            }
+        }
+    }
+
 }
