@@ -47,4 +47,23 @@ public class Colaboraciones {
         return ""+ID_colaboraciones+", "+libro+", "+autor;
     }
     
+//Otros metodos de la clase Colaboraciones
+
+    //Este metodo lo usamos para comprobar si un autor ha participado en un libro o no
+    public String comprobarColaboracion(){
+        if (libro.getAutores().equals(autor)){ //LLamamos al getAturos de la clase libro y lo comparamos con el autor que aparece en la colaboracion
+            return "El autor "+autor.getNombre()+" ha colaborado en el libro "+libro.getTitulo();
+        }else{
+            return "El autor "+autor.getNombre()+" no ha colaborado en el libro "+libro.getTitulo();
+        }
+    }
+
+    //Este metodo lo usamos para comprobar si un libro es del genero que queremos o no
+    public String comprobarGeneroColaboracion(String genero){
+        if (libro.getGenero().equals(genero)){ //LLamamos al getGenero de la clase libro y lo comparamos con el genero que nos pasan por parametro
+            return "El libro "+libro.getTitulo()+" es del genero "+genero;
+        }else{
+            return "El libro "+libro.getTitulo()+" no es del genero "+genero;
+        }
+    }
 }
