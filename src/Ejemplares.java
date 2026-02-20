@@ -57,11 +57,21 @@ public class Ejemplares {
 
 //Otros metodos de la clase Ejemplares
 
+    //Metodo que utilizaremos para comprobar el autor de un ejemplar
     public String comprobarAutor(){
         if (libro == null) {
             return "No hay libro asociado a este ejemplar.";
         }else{
-            return libro.getAutores().toString();
+            return libro.getAutores().toString(); //Llamamos al getAutores de la clase libro para obtener el autor del libro asociado a este ejemplar
+        }
+    }
+
+    //Metodo que utilizaremos para comprobar el precio de un ejemplar
+    public int comprobarPrecio(){
+        if (libro == null) {
+            return 0; //Si no hay libro asociado a este ejemplar, el precio es 0
+        }else{
+            return (int) libro.getPrecio(); //Llamamos al getPrecio de la clase libro para obtener el precio del libro asociado a este ejemplar
         }
     }
 }
