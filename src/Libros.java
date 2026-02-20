@@ -115,4 +115,18 @@ public class Libros {
         }
     }
 
+    //Usaremos este metodo para calcular el libro mas caro de una lista de libros
+    public String libroMasCaro(Libros[] libros) { //El unico parametro que pedimos es la lista de libros en la que queremos buscar
+        int max = 0;
+        String libroMasCaro = "";
+        for (int i = 0; i < libros.length; i++) {
+            if (libros[i].getPrecio() > max) {
+                max = (int) libros[i].getPrecio();
+                libroMasCaro = libros[i].getTitulo();
+            }
+        }
+        return "El libro más caro es: "+libroMasCaro+" con un precio de "+max+" euros.";
+
+    }
+
 }
