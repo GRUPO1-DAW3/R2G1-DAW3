@@ -109,4 +109,21 @@ public class Usuario {
     public String toString() {
         return "" + ID_usuario + ", "+nombre + " " + apellido1 + " " + apellido2 + ", " + email + ", " + telefono + ", " + nombre_usuario + ", " + tipo_usuario;
     }
+
+//Otros metodos de la clase Usuario
+    public boolean comprobarContraseña(String contraseña){
+        if (this.contraseña.equals(contraseña)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public String buscarUsuario(String nombre_usuario){
+        if (this.nombre_usuario.equals(nombre_usuario)) {
+            return this.toString(); //Llamamos al toString de la clase Usuario para obtener la información del usuario
+        } else {
+            return "No se ha encontrado ningún usuario con ese nombre de usuario.";
+        }
+    }
 }

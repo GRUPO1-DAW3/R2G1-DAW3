@@ -1,15 +1,17 @@
+import java.sql.Date;
+
 public class Tipos_penalizacion{
 //Atributos de la clase Tipos_penalizacion
     private int ID_tipo_penalizacion;
     private Penalizacion penalizacion;
     private String gravedad;
     private int dias_bloqueo;
-    private String fecha_inicio;
-    private String fecha_fin;
+    private Date fecha_inicio;
+    private Date fecha_fin;
     private String motivo;
 
 //metodo constructor de la clase Tipos_penalizacion
-    public Tipos_penalizacion(int pID_tipo_penalizacion, Penalizacion pPenalizacion, String pGravedad, int pDias_bloqueo, String pFecha_inicio, String pFecha_fin, String pMotivo){
+    public Tipos_penalizacion(int pID_tipo_penalizacion, Penalizacion pPenalizacion, String pGravedad, int pDias_bloqueo, Date pFecha_inicio, Date pFecha_fin, String pMotivo){
         this.ID_tipo_penalizacion=pID_tipo_penalizacion;
         this.penalizacion=pPenalizacion;
         this.gravedad=pGravedad;
@@ -32,10 +34,10 @@ public class Tipos_penalizacion{
     public int getDias_bloqueo(){
         return dias_bloqueo;
     }
-    public String getFecha_inicio(){
+    public Date getFecha_inicio(){
         return fecha_inicio;
     }
-    public String getFecha_fin(){
+    public Date getFecha_fin(){
         return fecha_fin;
     }
     public String getMotivo(){
@@ -59,11 +61,11 @@ public class Tipos_penalizacion{
         this.dias_bloqueo=pDias_bloqueo;
     }
 
-    public void setFecha_inicio(String pFecha_inicio){
+    public void setFecha_inicio(Date pFecha_inicio){
         this.fecha_inicio=pFecha_inicio;
     }
 
-    public void setFecha_fin(String pFecha_fin){
+    public void setFecha_fin(Date pFecha_fin){
         this.fecha_fin=pFecha_fin;
     }
 
@@ -87,4 +89,11 @@ public class Tipos_penalizacion{
 
 //Otros metodos de la clase Tipos_penalizacion
 
+    public String comprobarPenalizacion(){
+        if (penalizacion == null) {
+            return "No hay penalización asociada a este tipo de penalización.";
+        }else{
+            return penalizacion.toString(); //Llamamos al toString de la clase penalizacion para obtener la información de la penalización asociada a este tipo de penalización
+        }
+    }
 }
