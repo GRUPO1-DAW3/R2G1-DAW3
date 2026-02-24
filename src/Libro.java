@@ -1,4 +1,6 @@
 public class Libro {
+//Contador que utilizaremos para autoincrementar el codigo de cada libro
+    private static int siguienteCodigo = 1;
 //Atributos de la clase Libro; Aqui metemos todos los atributos que tendra nuestra clase
     private String titulo;
     private Autor autor;
@@ -15,7 +17,7 @@ public class Libro {
         this.genero = genero;
         this.precio = precio;
         this.paginas = paginas;
-        this.cod_libro = (int) (Math.random() * 100000);
+        this.cod_libro = siguienteCodigo++;
     }
 //Getters de la clase libro; En este caso haremos un getter a todods los atributos de la clase
     public String getTitulo() {
